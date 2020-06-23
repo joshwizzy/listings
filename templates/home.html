@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<a href="{% url "add_listing" %}">Add Listing</a>
+<h3 class="mt-2">Latest Listings</h3>
+<div class="col-md-8 mt-3">    
+    {% for listing in listings %}
+    <div class="card">   
+      <div class="card-body">
+
+
+      <blockquote class="blockquote mb-0">
+        <p>{{listing.title}}<small><a href="{{listing.get_absolute_url}}" >&nbsp;View Details &rarr;</a></small></p>
+        <footer class="blockquote-footer"><small>Posted on {{listing.created_at|date:"M d, Y"}} by
+            <a href="#">{{listing.created_by.name}}</a> in <a href="">{{listing.category}}</a></small></footer>
+      </blockquote>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

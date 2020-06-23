@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title">{{listing.title}}</h5>
+      <p class="card-text">{{listing.content}}</p>
+      <p class="card-text"><small class="text-muted">Posted by {{listing.created_by.name}} on {{listing.created_at}}</small></p>
+    </div>
+  </div>
+
+{% endblock %}
